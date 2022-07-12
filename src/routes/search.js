@@ -1,10 +1,10 @@
 
-function route(app){
-    
-    app.get('/search', (req,res) =>{
-        res.render('search');
-    })
+const searchRouter = require('../routes/searchRoute');
+
+function homepage(app){
+
+    app.use('/search', searchRouter);
+
 }
 
-module.exports = route;
-
+module.exports = homepage;

@@ -1,3 +1,4 @@
+
 const express = require("express");
 const req = require("express/lib/request");
 const res = require("express/lib/response");
@@ -5,8 +6,14 @@ const handlebars = require('express-handlebars');
 const path = require('path');
 
 //import controller
-const route = require('./routes/search.js');
-const home = require('./routes/home.js');
+//home page controller
+const homepage = require('../src/routes/search');
+//add new controller
+const addNew = require('../src/routes/addNew');
+//update controller
+const update = require('../src/routes/update');
+//delete controller
+const Delete = require('../src/routes/delete');
 
 const port = 8086;
 const app = express();
@@ -17,13 +24,15 @@ app.use(express.urlencoded({
 app.use(express.json());
 
 //Template engine
-app.engine('handlebars', handlebars.engine());
+app.engine('handlebars', handlebars.engine({defaultLayout: 'mainn'}));      //set default layout
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname + '\\resourses\\views'));
 app.use(express.static(path.join( __dirname , 'public')));
 
-route(app);
-home(app);
+homepage(app);
+addNew(app);
+update(app);
+Delete(app);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
