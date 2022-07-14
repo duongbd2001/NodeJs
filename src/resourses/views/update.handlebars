@@ -1,2 +1,31 @@
-<h1>Update infor's page</h1>
-<h4>Update in here</h4>
+<h3 class="mt-4">Update Information</h3>
+<form action="/update/{{student._id}}/modify" method="post" class="mt-4" >
+    <div class="form-floating mb-3">
+        <input name="name" type="text" class="form-control" value="{{student.name}}" id="name" placeholder="Full name">
+        <label for="name">Full Name</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="age" type="text" class="form-control" value="{{student.age}}" id="age" placeholder="Age">
+        <label for="age">Age</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="address" type="text" class="form-control" value="{{student.address}}" id="address" placeholder="Address">
+        <label for="address">Address</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="phoneNumber" type="text" class="form-control" value="{{student.phoneNumber}}" id="phoneNumber" placeholder="Phone number">
+        <label for="phoneNumber">Phone Number</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="email" type="text" class="form-control" value="{{student.email}}" id="email" placeholder="Email">
+        <label for="email">Email</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="dob" type="text" class="form-control" value="{{student.dob}}" id="dob" placeholder="Date of birth">
+        <label for="dob">Date Of Birth</label>
+    </div>
+    
+    <div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+</form>

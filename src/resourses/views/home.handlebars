@@ -1,40 +1,33 @@
-
-  <span class='bi bi-trash'></span>
-  <a href="/add-new"><i class="fa-solid fa-plus"></i>Add New</a>
-
+<span class='bi bi-trash'></span>
+<a href="/add-new"><i class="fa-solid fa-plus">Add New</a>
 <div>
   <table class="table mt-4">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Address</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Email</th>
+        <th scope="col">Date of birth</th>
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
+      {{#each students}}
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td> <a href="/update" class="list-group-item"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a> </td>
+        <td>{{this.name}}</td>
+        <td>{{this.age}}</td>
+        <td>{{this.address}}</td>
+        <td>{{this.phoneNumber}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.dob}}</td>
+        <td>
+          <a href="/update/{{this._id}}/edit" aria-hidden="true">Edit</a>
+          <a href="/delete/{{this._id}}" aria-hidden="true">Delete</a>
+        </td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td> <a href="/update" class="list-group-item"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a> </td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-        <td> <a href="/update" class="list-group-item"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a> </td>
-      </tr>
+      {{/each}}
     </tbody>
   </table>
 </div>

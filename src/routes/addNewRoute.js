@@ -2,6 +2,7 @@ const express = require('express');
 const addNewRouter = express.Router();
 const addNewController = require('../app/controller/AddController');
 
-addNewRouter.use('/', addNewController.addNew);
+addNewRouter.get('/', addNewController.addNew);
+addNewRouter.post('/create', addNewController.create);
 
 module.exports = addNewRouter;
